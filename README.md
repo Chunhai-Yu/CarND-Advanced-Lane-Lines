@@ -55,11 +55,11 @@ Firstly, I take undistort image "test3" as example to get a warped binary image 
 
 With the warped binary image, then I use function find_lane_pixels(binary_warped) with slid windows to detect lane-line pixels. After that, I use function fit_polynomial(binary_warped) to fit the lanes.
 
-<img src="images_of_report/5.png" width="480" alt="fitting" />
+<img src="images_of_report/6.png" width="480" alt="fitting" />
 
 To improve the efficiency in video processing, in the next frame of video it is unnecessary to use sliding windows, but instead we can just search in a margin around the previous lane line position. The result is given as below:
 
-<img src="images_of_report/6.png" width="480" alt="margin" />
+<img src="images_of_report/7.png" width="480" alt="margin" />
 
 ## 5. Calculate the radius of curvature of the lane and the position of the vehicle with respect to center
 
@@ -69,7 +69,7 @@ We need to calculate the radius of curvature in real world space rather than bas
 
 I take the same image of "test3" as example to show that the lane area is identified clearly. The detailed codes to display is given in function show_fit_lane_info(offset, radius, image, smooth_number=15, color=(0,255,255)) and function draw_lane_fit(undist, warped ,Minv, left_fitx, right_fitx, ploty). The example result is given as below:
 
-<img src="images_of_report/7.png" width="480" alt="result" />
+<img src="images_of_report/8.png" width="480" alt="result" />
 
 ## Pipeline(Video)
 
